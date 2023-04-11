@@ -10,3 +10,4 @@ DisableIncludeTreeDumpOnNinjaWithMSVC()
 
 add_subdirectory(CxxTemplates)
 add_subdirectory(IDETests)
+add_subdirectory(Compiler)
