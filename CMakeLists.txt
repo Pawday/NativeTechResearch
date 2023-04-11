@@ -9,3 +9,4 @@ include(CMakeBuildSystemHacks)
 DisableIncludeTreeDumpOnNinjaWithMSVC()
 
 add_subdirectory(CxxTemplates)
+add_subdirectory(IDETests)
