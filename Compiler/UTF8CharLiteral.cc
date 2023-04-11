@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <bitset>
 
 
 
@@ -27,11 +28,12 @@ template <typename LITERAL_T>
 void PrintLiteralMeta(std::string name, LITERAL_T val)
 {
     std::cout << "Meta of " << name << std::endl;
-    std::cout << "val=" << val << std::endl;
-    std::cout << "representation_start" << std::endl;
+    std::cout << "Number: " << val << std::endl;
+    std::cout << "Bits: 0b" << std::bitset<sizeof(LITERAL_T) * 8>(val) << std::endl;
+    std::cout << "____representation_start" << std::endl;
     std::cout.write((char*) &val, sizeof(val));
     std::cout << std::endl;
-    std::cout << "representation_end" << std::endl;
+    std::cout << "____representation_end_" << std::endl;
 }
 
 int main()
