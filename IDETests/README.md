@@ -6,5 +6,5 @@
 
 ## Summary:
 
-- [CPPConstexprTest.cpp](./CPPConstexprTest.cpp)
+- [CPPConstexprTest.cc](./CPPConstexprTest.cc)
 contains example code for [this issue in CLion IDE](https://youtrack.jetbrains.com/issue/CPP-32240) 

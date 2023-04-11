@@ -1,6 +1,6 @@
 project(IDETests)
 
-add_library(CPPConstexprTest OBJECT CPPConstexprTest.cpp)
+add_library(CPPConstexprTest OBJECT CPPConstexprTest.cc)
 
 
 option(IDE_TESTS_HIGHEST_CXX_STD_FOR_TARGETS "If target support multiple cxx standards set the highest if possible" OFF)
