@@ -1,7 +1,12 @@
 macro(DisableIncludeTreeDumpOnNinjaWithMSVC)
+
     if (${CMAKE_GENERATOR} STREQUAL "Ninja" AND MSVC)
+
         option(MSVC_NINJA_DISABLE_INCLUDE_TREE_DUMP "If true option \"/showIncludes\" of msvc compiler would be erased" ON)
         option(DISABLE_HINT_MSVC_NINJA "Disables hint about Ninja's include tree dumping on MSVC" OFF)
+
+
+        set(_ERAZE_TREE_SHOWING_OPTION ${MSVC_NINJA_DISABLE_INCLUDE_TREE_DUMP})
 
         if (NOT ${MSVC_NINJA_DISABLE_INCLUDE_TREE_DUMP} AND NOT ${DISABLE_HINT_MSVC_NINJA})
 
@@ -25,13 +30,13 @@ macro(DisableIncludeTreeDumpOnNinjaWithMSVC)
             unset(HINT_MESSAGE)
         endif ()
     else()
-        return()
+        set(_ERAZE_TREE_SHOWING_OPTION FALSE)
     endif()
 
-    if (${MSVC_NINJA_DISABLE_INCLUDE_TREE_DUMP})
-
+    if (${_ERAZE_TREE_SHOWING_OPTION})
         string(REPLACE "/showIncludes" "" CMAKE_DEPFILE_FLAGS_C ${CMAKE_DEPFILE_FLAGS_C})
         string(REPLACE "/showIncludes" "" CMAKE_DEPFILE_FLAGS_CXX ${CMAKE_DEPFILE_FLAGS_CXX})
-
     endif()
+
+    unset(_ERAZE_TREE_SHOWING_OPTION)
 endmacro()
