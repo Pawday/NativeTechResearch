@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(CXX_TemplatesTests)
+
+add_executable(AckermannTemplated AckermannTemplated.cc)
+add_executable(CharAndCompileTime CharAndCompileTime.cc)
+add_executable(TemplateFactorial TemplateFactorial.cc)
+
+add_executable(SFINAEBeginning SFINAEBeginning.cc)
