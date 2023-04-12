@@ -176,12 +176,12 @@ void TrimRightSized(char *s , size_t stringLen)
 // Первая версия алгоритма с нестабильным поведением на последних итерациях рядом с границей символов
 void TrimRightSizedUnstable(char *s , size_t stringLen)
 {
-    ptrdiff_t signedStepSize = (ptrdiff_t) -stringLen;
+    ptrdiff_t signedStepSize = -(ptrdiff_t) stringLen;
     size_t searchIndex = stringLen - 1;
 
     if (stringLen < 10)
     {
-        int index = stringLen - 1;
+        size_t index = stringLen - 1;
 
         while (s[index] == ' ') index--;
         s[index + 1] = 0;
