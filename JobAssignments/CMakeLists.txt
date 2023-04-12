@@ -1,0 +1,15 @@
+project(JobAssignments)
+
+
+list(FIND CMAKE_C_COMPILE_FEATURES cxx_std_20 _JOB_ASSIGNMENTS_HAS_CXX_20)
+
+if (_JOB_ASSIGNMENTS_HAS_CXX_20 EQUAL -1)
+    set(_JOB_ASSIGNMENTS_HAS_CXX_20 FALSE)
+else()
+    set(_JOB_ASSIGNMENTS_HAS_CXX_20 TRUE)
+endif()
+
+add_subdirectory(DrWeb)
+
+
+unset(_JOB_ASSIGNMENTS_HAS_CXX_20)
