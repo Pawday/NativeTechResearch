@@ -14,7 +14,7 @@ else()
 endif()
 
 if(${_HAS_CXX_17} AND ${IDE_TESTS_HIGHEST_CXX_STD_FOR_TARGETS})
-    message(STATUS "cxx_std for CPPConstexprTest = cxx_std_17")
+    message(STATUS "cxx_std for IDETests/CPPConstexprTest set to cxx_std_17")
     target_compile_features(CPPConstexprTest PRIVATE cxx_std_17)
 endif()
 
