@@ -1,11 +1,15 @@
 #include <iostream>
-#include <string>
 #include <bitset>
 
 
 
 #ifdef U8_WITH_MSVC
     #define HAS_SUPPORT_FOR_UTF8_CHAR_LITERALS 1
+
+    //allow emoji for testing MSVC compiler on "Compiler Error C2015"
+    #ifndef ALLOW_EMOJI
+        #define ALLOW_EMOJI 0
+    #endif
 #else
     #define HAS_SUPPORT_FOR_UTF8_CHAR_LITERALS 0
 #endif
@@ -17,15 +21,19 @@
     #define CHAR_LITERAL_MAN '♂'
     #define CHAR_LITERAL_WOMAN '♀'
     #define CHAR_LITERAL_GBAKURUNEN '߷'
+#if ALLOW_EMOJI
+    #define CHAR_LITERAL_PRIDE_FLAG '🏳️‍🌈'
+#endif
 #else
     #define CHAR_LITERAL_MATH_PI '?'
     #define CHAR_LITERAL_MAN '?'
     #define CHAR_LITERAL_WOMAN '?'
     #define CHAR_LITERAL_GBAKURUNEN '?'
+    #define CHAR_LITERAL_PRIDE_FLAG '?'
 #endif
 
 template <typename LITERAL_T>
-void PrintLiteralMeta(std::string name, LITERAL_T val)
+void PrintLiteralMeta(const std::string &name, LITERAL_T val)
 {
     std::cout << "Meta of " << name << std::endl;
     std::cout << "Number: " << val << std::endl;
@@ -49,6 +57,10 @@ int main()
     auto man_v = CHAR_LITERAL_MAN;
     auto woman_v = CHAR_LITERAL_WOMAN;
 
+#if ALLOW_EMOJI
+    auto pride_v = CHAR_LITERAL_PRIDE_FLAG;
+#endif
+
     std::cout << "Typeof literal is "<< typeid(gbakurunen_v).name() << std::endl;
     std::cout << "sizeof literal is "<< sizeof(gbakurunen_v) <<  std::endl;
 
@@ -64,6 +76,11 @@ int main()
     std::cout << std::endl;
 
     PrintLiteralMeta("CHAR_LITERAL_WOMAN", woman_v);
+    std::cout << std::endl;
+#if ALLOW_EMOJI
+    PrintLiteralMeta("CHAR_LITERAL_PRIDE_FLAG", pride_v);
+    std::cout << std::endl;
+#endif
 
 
 #endif // #else !HAS_SUPPORT_FOR_UTF8_CHAR_LITERALS
