@@ -4,4 +4,8 @@ project(CompilerTests)
 
 include(UTF8CharLiteralSegregatedFile.cmake)
 
-add_executable(DeadCodeOptimisationTests DeadCodeTest.c)
+if (MSVC)
+    add_library(DeadCodeOptimisationTests OBJECT DeadCodeTest.c)
+else()
+    add_executable(DeadCodeOptimisationTests DeadCodeTest.c)
+endif()
