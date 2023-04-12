@@ -111,6 +111,7 @@ char *order_words(char *ordered, const char *words)
 
 void do_test (const char *input, const char *expected, char *user_string)
 {
+    (void) user_string; //TODO: This CodeWar's task is not finished
     char *mem = (char*) malloc(strlen(input) + 1);
     
     order_words(mem, input);

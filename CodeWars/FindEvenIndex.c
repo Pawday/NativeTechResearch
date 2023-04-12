@@ -29,7 +29,7 @@ int find_even_index(const int *values, int length)
 }
 
 
-int main()
+int main(void)
 {
     {
         int arr[] = {1, 2, 3, 4, 3, 2, 1};

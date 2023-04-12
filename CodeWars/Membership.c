@@ -7,11 +7,11 @@ void open_or_senior (const size_t n, const int *members[2], enum membership *mem
 void open_or_senior (const size_t n, const int members[n][2], enum membership memberships[n])
 #endif
 {
-    for (int i = 0; i < n; i++)
+    for (size_t i = 0; i < n; i++)
         memberships[i] = (members[i][0] >= 55 && members[i][1] > 7) ? SENIOR : OPEN;
 }
 
-int main()
+int main(void)
 {
-
+    // No tests LOL
 }

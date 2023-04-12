@@ -12,7 +12,7 @@ char countBits(unsigned value)
 }
 
 
-int main()
+int main(void)
 {
     char size1 = countBits(0b10000000000000000000000000000000);
     char size2 = countBits(0b11000000000000000000000000000000);

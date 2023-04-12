@@ -17,12 +17,18 @@ bool solution(const char *string, const char *ending)
     return status;
 }
 
+#include <stdio.h>
 
-
-int main()
+int main(void)
 {
     bool var1 = solution("abc", "bc");
     bool var2 = solution("abc", "d");
     bool var3 = solution("abc", "");
     bool var4 = solution("ails", "fails");
+
+    printf("is \"%s\" end with \"%s\" = %d \n", "abc", "bc", var1);
+    printf("is \"%s\" end with \"%s\" = %d \n", "abc", "d", var2);
+    printf("is \"%s\" end with \"%s\" = %d \n", "abc", "", var3);
+    printf("is \"%s\" end with \"%s\" = %d \n", "ails", "fails", var4);
+
 }
