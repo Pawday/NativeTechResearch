@@ -14,3 +14,4 @@
   - My [FFMPEG cmake port](https://github.com/Pawday/ffmpeg-cmake) project stops on this issue. 
   - My related [patch](http://ffmpeg.org/pipermail/ffmpeg-devel/2023-January/305899.html) to ffmpeg
   - My related [question](https://stackoverflow.com/questions/71728589/why-do-ffmpeg-developers-use-runtime-if-with-macrofied-condition) on StackOverflow
+- [FunctionCall.c](./FunctionCall.c) Function pointers collapse test

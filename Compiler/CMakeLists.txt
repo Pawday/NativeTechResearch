@@ -9,3 +9,6 @@ if (MSVC)
 else()
     add_executable(DeadCodeOptimisationTests DeadCodeTest.c)
 endif()
+
+
+add_executable(FunctionCallTest FunctionCall.c)
